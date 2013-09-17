@@ -1,4 +1,56 @@
+# #Copyright (C) 2013, Delft University of Technology, Faculty of Electrical Engineering, Mathematics and Computer Science, Network Architectures and Services, Niels van Adrichem
+#
+# This file is part of OpenNetMon.
+#
+# OpenNetMon is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# OpenNetMon is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with OpenNetMon.  If not, see <http://www.gnu.org/licenses/>.
+
+# Special thanks go to James McCauley and all people connected to the POX project, without their work and provided samples OpenNetMon could not have been created in the way it is now.
+
 SDN-OpenNetMon
 ==============
 
-Accurate and precise OpenFlow Monitoring POX module
+OpenNetMon offers and accurate and precise OpenFlow Monitoring POX module.
+Its key contribution is to monitor not only throughput, but also per flow packet loss and path delay for all flows and paths in use in an OpenFlow network.
+The output is currently printed to terminal and saved to two files, but is intended to be used as input for QoS controllers.
+
+Installation:
+Installation is easy :-) (who would not say so)
+Step 1)
+Decide whether you want to go with a physical testbed or use Mininet and install accordingly.
+
+Step 2)
+Install POX (betta branch) on your controller node according to: https://openflow.stanford.edu/display/ONL/POX+Wiki#POXWiki-InstallingPOX
+
+Step 3)
+You should now have a folder ~/pox containing the working directory of pox.
+In the pox working directory is a folder `ext`, meant to contain files that should not be modified by upgrading POX or checking out another brance.
+
+Create a new folder `opennetmon`  into the `ext` directory and clone and extract the code into it.
+
+# mkdir ~/pox/ext/opennetmon
+# git clone https://github.com/TUDelftNAS/SDN-OpenNetMon ~/pox/ext/opennetmon
+
+CD into the POX working directory
+# cd ~/pox
+
+Run POX with the OpenNetMon modules
+# ./pox.py opennetmon.startup
+
+From here on, you are good to go to run experiments and get a feeling of OpenNetMon's capabilities.
+The OpenNetMon module contains a forwarding module capable of finding shortest paths in multipath networks and starts all depending modules from the `opennetmon/startup.py` script.
+
+
+
+
+
