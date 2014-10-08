@@ -24,6 +24,8 @@ OpenNetMon offers and accurate and precise OpenFlow Monitoring POX module.
 Its key contribution is to monitor not only throughput, but also per flow packet loss and path delay for all flows and paths in use in an OpenFlow network.
 The output is currently printed to terminal and saved to two files, but is intended to be used as input for QoS controllers.
 
+When using OpenNetMon please refer to the accompanying article: Niels L. M. van Adrichem, Christian Doerr and Fernando A. Kuipers, 2014, OpenNetMon: Network monitoring in OpenFlow Software-Defined Networks, IEEE/IFIP Network Operations and Management Symposium (NOMS), Poland, Kraków, May 5-9, http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6838228
+
 Installation:
 Installation is easy :-) (who would not say so)
 Step 1)
