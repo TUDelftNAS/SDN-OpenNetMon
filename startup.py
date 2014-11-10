@@ -15,7 +15,8 @@
 # You should have received a copy of the GNU General Public License
 # along with OpenNetMon.  If not, see <http://www.gnu.org/licenses/>.
 
-# Special thanks go to James McCauley and all people connected to the POX project, without their work and provided samples OpenNetMon could not have been created in the way it is now.from datetime import datetime
+# Special thanks go to James McCauley and all people connected to the POX project, without their work and provided samples OpenNetMon could not have been created in the way it is now.
+from datetime import datetime
 
 def launch (postfix=datetime.now().strftime("%Y%m%d%H%M%S")):
         from log.level import launch
@@ -33,9 +34,9 @@ def launch (postfix=datetime.now().strftime("%Y%m%d%H%M%S")):
         #we solved the flooding-problem in l2_multi_withstate
         #from openflow.spanning_tree import launch
         #launch(no_flood = True, hold_down = True)
-		
+
         from opennetmon.forwarding import launch
         launch(l3_matching=False)
-        
+
         from opennetmon.monitoring import launch
         launch(postfix=postfix)
